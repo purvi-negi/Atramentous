@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atramentous | Discover Life Beyond Earth</title>
+    <meta name="description" content="Atramentous uses advanced data science to predict the habitability of exoplanets using NASA data.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Starry Background -->
+    <div id="stars-container">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+    </div>
+
+    <nav id="navbar">
+        <div class="container">
+            <a href="#" class="logo">ATRAMENTOUS</a>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#predictor">Predictor</a></li>
+                <li><a href="#visualizations">Visualizations</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <h1 class="glow-text">Atramentous</h1>
+                <p class="subtitle">Discover Life Beyond Earth</p>
+                <div class="hero-description">
+                    Empowering the next generation of space exploration through predictive data science and exoplanetary analysis.
+                </div>
+                <a href="#predictor" class="cta-button">Explore Exoplanets</a>
+            </div>
+        </section>
+
+        <!-- Input Section -->
+        <section id="predictor" class="predictor">
+            <div class="container">
+                <div class="glass-panel">
+                    <h2 class="section-title">Habitability Predictor</h2>
+                    <p class="section-subtitle">Enter exoplanetary parameters to check for life-sustaining potential.</p>
+                    
+                    <form id="habitability-form" class="prediction-form">
+                        <div class="form-grid">
+                            <div class="input-group">
+                                <label for="planet-radius">Planet Radius (Earth Radii)</label>
+                                <input type="number" id="planet-radius" name="radius" step="0.01" placeholder="e.g., 1.02" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="surface-temp">Surface Temperature (Kelvin)</label>
+                                <input type="number" id="surface-temp" name="temperature" step="0.1" placeholder="e.g., 288" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="distance">Distance from Star (AU)</label>
+                                <input type="number" id="distance" name="distance" step="0.01" placeholder="e.g., 1.00" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="orbital-period">Orbital Period (Days)</label>
+                                <input type="number" id="orbital-period" name="period" step="0.1" placeholder="e.g., 365.2" required>
+                            </div>
+                            <div class="input-group full-width">
+                                <label for="star-type">Star Type</label>
+                                <select id="star-type" name="star_type" required>
+                                    <option value="" disabled selected>Select Star Type</option>
+                                    <option value="G">G-Type (Sun-like)</option>
+                                    <option value="M">M-Type (Red Dwarf)</option>
+                                    <option value="K">K-Type (Orange Dwarf)</option>
+                                    <option value="F">F-Type (Yellow-White Dwarf)</option>
+                                    <option value="A">A-Type (White Main Sequence)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" id="submit-btn" class="submit-button">Check Habitability</button>
+                    </form>
+                </div>
+
+                <!-- Prediction Output Section (Hidden by default) -->
+                <div id="result-container" class="result-container hidden">
+                    <div class="glass-panel result-panel">
+                        <h3>Prediction Result</h3>
+                        <div class="result-content">
+                            <div class="status-indicator">
+                                <div id="status-text" class="status-text">--</div>
+                                <div id="probability-bar" class="progress-bar-container">
+                                    <div id="probability-fill" class="progress-bar-fill"></div>
+                                </div>
+                                <div id="probability-text" class="probability-text">0% Probability</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visualization Section -->
+        <section id="visualizations" class="visualizations">
+            <div class="container">
+                <h2 class="section-title">Data Visualizations</h2>
+                <div class="visualization-grid">
+                    <div class="glass-panel chart-container">
+                        <h3>Planetary Distribution</h3>
+                        <div id="bar-chart" class="chart-placeholder">
+                            <div class="placeholder-text">Interactive Matplotlib Chart Placeholder</div>
+                        </div>
+                    </div>
+                    <div class="glass-panel chart-container">
+                        <h3>Habitability Heatmap</h3>
+                        <div id="heatmap" class="chart-placeholder">
+                            <div class="placeholder-text">Interactive Matplotlib Chart Placeholder</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="glass-panel">
+                    <h2 class="section-title">About the Project</h2>
+                    <div class="about-content">
+                        <p>Atramentous is a data-driven platform designed to identify habitable worlds beyond our solar system. By leveraging complex planetary data and machine learning algorithms, we analyze physical and orbital characteristics to predict the likelihood of life-sustaining environments.</p>
+                        <p>This project utilizes extensive datasets provided by <strong>NASA</strong>, including the Exoplanet Archive and Kepler mission observations, to ensure the highest level of scientific accuracy in our predictions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Atramentous Project. Data sourced from <a href="https://exoplanetarchive.ipac.caltech.edu/" target="_blank">NASA Exoplanet Archive</a>.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
