@@ -110,8 +110,15 @@ document.addEventListener('DOMContentLoaded', () => {
         displayResult({ is_habitable: isHabitable, probability: probability });
     }
 });
+// Load visualization charts
 fetch('/visualize')
 .then(response => response.json())
-.then(graph => {
-    Plotly.newPlot('chart', JSON.parse(graph).data, JSON.parse(graph).layout);
-});
+.then(data => {
+    if (data.chart1) {
+        Plotly.newPlot('chart1', data.chart1.data, data.chart1.layout);
+    }
+    if (data.chart2) {
+        Plotly.newPlot('chart2', data.chart2.data, data.chart2.layout);
+    }
+})
+.catch(error => console.error('Error loading visualizations:', error));
